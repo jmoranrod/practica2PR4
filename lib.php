@@ -5,7 +5,9 @@ class View{
         <html>
         <head>
         <meta charset=\"utf-8\">
-        <link rel=\"stylesheet\" type=\"text/css\" href=\"estilos.css\" />
+        <link rel=\"stylesheet\" type=\"text/css\" href='estilos.css' />
+        <script src='http://code.jquery.com/jquery-1.11.2.min.js'></script>
+        <script src='scripts.js'></script>
         <title>$title</title>
         </head>
         <body>";
@@ -17,7 +19,7 @@ class View{
     }
 
     public static function search_box(){
-        $html = "        <form method=\"post\" action=\"search.php\">
+        $html = "        <form method=\"post\" action=\"search.php\" name=\"search\" onsubmit='return validateForm()'>
         <fieldset>
         <legend>Búsqueda</legend>
         <input type=\"text\" name=\"buscar\">
@@ -44,5 +46,18 @@ class View{
         <input type="reset">
         </fieldset>';
         echo $form;
+    }
+
+    public static function get_form($uid){
+        echo "<th>
+            <form name='gestion' method='post' action='proccessForm.php'>
+                <select name='option_gestion'>
+                    <option value='1'>Borrar usuario</option>
+                    <option value='2' selected>Modificar usuario</option>
+                </select>
+                    <input type='hidden' value='$uid' name='uid'>
+                    <input type='submit'>
+            </form>
+        </th>";
     }
 }
