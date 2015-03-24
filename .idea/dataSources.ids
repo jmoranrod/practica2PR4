@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="SQLite -" uuid="0f61c973-a0d8-4ca2-a639-0a93ee9d8c47">
+    <database-info product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="cambiables" schema="" catalog="" type="TABLE">
+      <column name="usuario" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="juego" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <foreign-key name="#FAKE_cambiables_1" columns="juego" ref-table="juegos" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="0" deferrability="1"/>
+      <foreign-key name="#FAKE_cambiables_2" columns="usuario" ref-table="usuarios" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="0" deferrability="1"/>
+    </table>
+    <table name="juegos" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="plataforma" sqlType="NVARCHAR(60)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="nombre" sqlType="NVARCHAR(60)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="descripcion" sqlType="NVARCHAR(120)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="URL" sqlType="NVARCHAR(120)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_cambiables_1" table="cambiables" schema="" catalog="" columns="juego"/>
+    </table>
+    <table name="usuarios" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="usuario" sqlType="NVARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="clave" sqlType="NVARCHAR(32)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="nombre" sqlType="NVARCHAR(200)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="NVARCHAR(200)" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="tipo" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_cambiables_2" table="cambiables" schema="" catalog="" columns="usuario"/>
+    </table>
+  </data-source>
+</component>
