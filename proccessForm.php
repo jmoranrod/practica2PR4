@@ -13,7 +13,7 @@ if($option == 1){
     print_r($res);
     header("Refresh: 5; URL: admin.php");
 }elseif($option == 2){
-    Profile::get_form();
+    Profile::get_form($uid);
 }else{
     exit();
 }

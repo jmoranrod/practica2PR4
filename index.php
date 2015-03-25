@@ -2,7 +2,7 @@
 include_once 'lib.php';
 include_once 'db.php';
 View::start('Club de intercambio de vídeo juegos');
-$res = DB::queryExecuter('SELECT * FROM juegos;');
+$res = DB::queryExecuter('SELECT * FROM usuarios;');
 //print_r($res);
 echo "<br>";
 //DB::queryExecuter('SELECT * FROM usuarios;');
