@@ -1,5 +1,6 @@
 <?php
-
+include_once 'lib.php';
+View::start('Buscador');
 $text = $_POST['buscar'];
 $option = $_POST['buscador'];
 
@@ -20,7 +21,7 @@ if($option == 1){
     $campo = 'usuario';
     $sel = 'usuario,nombre';
 }else{
-    die('Nope');
+    die('Invalid option');
 }
 
 $db = new PDO("sqlite:datos.db");
@@ -45,5 +46,6 @@ if($res){
         }
         echo "</tr>";
     }
-    echo '</table>';
+    echo '</table><br>';
+    echo '<a href="index.php">Volver atrás</a>';
 }

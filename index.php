@@ -1,6 +1,7 @@
 <?php
 include_once 'lib.php';
 include_once 'db.php';
+include_once 'profile.php';
 View::start('Club de intercambio de vídeo juegos');
 $res = DB::queryExecuter('SELECT * FROM usuarios;');
 //print_r($res);
@@ -29,6 +30,7 @@ if(!isset($_SESSION['usuario'])){
         }
     }
     echo '<a href="logout.php">Cerrar sesión</a><br>';
+    Profile::get_form($_SESSION['usuario'], $_SESSION['tipo']);
 }
 
 //Ejemplo de lectura de tabla

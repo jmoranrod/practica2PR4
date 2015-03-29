@@ -9,7 +9,7 @@ if ( $_SESSION['tipo'] == 0) {
 
 echo "Hola <b>".$_SESSION['usuario']."</b><br>";
 //echo $_SERVER['HTTP_REFERER'];
-$res = DB::queryExecuter('SELECT * FROM usuarios;');
+$res = DB::queryExecuter('SELECT id,usuario,nombre,email,tipo FROM usuarios;');
 if($res){
     $res->setFetchMode(PDO::FETCH_NAMED);
     $first=true;
@@ -28,10 +28,11 @@ if($res){
             echo "<th>$value</th>";
         }
         $uid = $user['id'];
-        View::get_form($uid);
+        $tipo = $user['tipo'];
+        View::get_form($uid,$tipo);
         echo "</tr>";
     }
     echo '</table>';
 }
-
+echo '<br><a href="index.php">Volver a la página principal</a>';
 View::end();

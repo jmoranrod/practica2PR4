@@ -48,14 +48,15 @@ class View{
         echo $form;
     }
 
-    public static function get_form($uid){
+    public static function get_form($uid,$tipo){
         echo "<th>
             <form name='gestion' method='post' action='proccessForm.php'>
                 <select name='option_gestion'>
-                    <option value='1'>Borrar usuario</option>
-                    <option value='2' selected>Modificar usuario</option>
+                    <option value='1' selected>Borrar usuario</option>
+                    <option value='2' disabled>Modificar usuario</option>
                 </select>
                     <input type='hidden' value='$uid' name='uid'>
+                    <input type='hidden' value='$tipo' name='tipo'>
                     <input type='submit'>
             </form>
         </th>";

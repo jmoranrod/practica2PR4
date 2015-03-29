@@ -7,13 +7,14 @@ View::start('');
 
 $uid = $_POST['uid'];
 $option = $_POST['option_gestion'];
+$tipo = $_POST['tipo'];
 
 if($option == 1){
     $res = DB::queryExecuter("DELETE FROM usuarios WHERE id='$uid';");
-    print_r($res);
-    header("Refresh: 5; URL: admin.php");
+    echo "Usuario eliminado<br>Volviendo al panel de control en 5 segundos...";
+    header( "refresh:5;url=admin.php" );
 }elseif($option == 2){
-    Profile::get_form($uid);
+    Profile::get_form($uid,$tipo);
 }else{
     exit();
 }
