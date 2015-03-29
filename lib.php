@@ -1,12 +1,12 @@
 <?php
 class View{
+    //<script src='http://code.jquery.com/jquery-1.11.2.min.js'></script>
     public static function  start($title){
         $html = "<!DOCTYPE html>
         <html>
         <head>
         <meta charset=\"utf-8\">
         <link rel=\"stylesheet\" type=\"text/css\" href='estilos.css' />
-        <script src='http://code.jquery.com/jquery-1.11.2.min.js'></script>
         <script src='scripts.js'></script>
         <title>$title</title>
         </head>
